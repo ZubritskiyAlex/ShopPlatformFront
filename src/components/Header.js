@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {Navbar, Nav, Container, NavDropdown} from "react-bootstrap";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PersonIcon from '@material-ui/icons/Person';
@@ -13,7 +13,7 @@ function Header(){
     const {userInfo} = userLogin
     const dispatch = useDispatch()
     const logoutHandler = () => {
-        dispatch(logout())
+        dispatch(logout)
     }
 
 
@@ -45,6 +45,23 @@ function Header(){
                                 <Nav.Link>&nbsp;Login<PersonIcon/></Nav.Link>
                             </LinkContainer>
 
+                            )}
+
+                            {userInfo && userInfo.isAdmin &&(
+                                <NavDropdown title='Admin' id='adminmenue'>
+                                    <LinkContainer to ='/admin/userlist'>
+                                        <NavDropdown.Item>Users</NavDropdown.Item>
+                                    </LinkContainer>
+
+                                    <LinkContainer to ='/admin/userlist'>
+                                        <NavDropdown.Item>Products</NavDropdown.Item>
+                                    </LinkContainer>
+
+                                    <LinkContainer to ='/admin/userlist'>
+                                        <NavDropdown.Item>Orders</NavDropdown.Item>
+                                    </LinkContainer>
+
+                                </NavDropdown>
                             )}
 
 
