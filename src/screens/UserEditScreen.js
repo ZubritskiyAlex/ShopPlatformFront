@@ -10,7 +10,7 @@ import {USER_UPDATE_RESET} from "../constants/userConstants";
 
 
 
-function EditUserScreen({match, history}){
+function UserEditScreen({match, history}){
 
     const userId = match.params.id
     const [name, setName] = useState('')
@@ -107,4 +107,4 @@ function EditUserScreen({match, history}){
             </div>
     )
 }
-export default EditUserScreen
+export default UserEditScreen
