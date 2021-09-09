@@ -5,24 +5,28 @@ import {useDispatch, useSelector} from "react-redux";
 import {listProducts} from "../actions/productActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
+import ProductCarousel from "../components/ProductCarousel";
 
 
-function HomeScreen(){
+function HomeScreen({history}){
     const dispatch = useDispatch()
-
-
     const productList = useSelector((state) => state.productList)
     const {error, loading, products} = productList
 
+    let keyword = history.location.search
+    console.log(keyword)
     useEffect(() => {
-        dispatch(listProducts())
+        dispatch(listProducts(keyword))
 
-    },[dispatch])
+    },[dispatch, keyword])
 
 
      return(
        <div>
-           <h1>Latest Products</h1>
+
+           {!keyword && <ProductCarousel/>}
+
+           <h1>ALL Products</h1>
 
            {loading ? <Loader/>
                     : error ? <Message variant='danger'>{error}</Message>

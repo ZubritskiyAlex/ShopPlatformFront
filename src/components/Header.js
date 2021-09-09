@@ -5,6 +5,7 @@ import PersonIcon from '@material-ui/icons/Person';
 import {LinkContainer} from 'react-router-bootstrap'
 import {useDispatch, useSelector} from "react-redux";
 import {logout} from "../actions/userActions";
+import SearchBox from "./SearchBox";
 
 
 function Header(){
@@ -24,13 +25,29 @@ function Header(){
                         <LinkContainer to='/'>
                                 <Navbar.Brand>PlatformShop</Navbar.Brand>
                         </LinkContainer>
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+                        <LinkContainer to='/shops'>
+                                <Navbar.Brand>SHOPS</Navbar.Brand>
+                        </LinkContainer>
+
+                        <LinkContainer to='/'>
+                                <Navbar.Brand>PRODUCTS</Navbar.Brand>
+                        </LinkContainer>
+
+                        <LinkContainer to='/about'>
+                                <Navbar.Brand>ABOUT</Navbar.Brand>
+                        </LinkContainer>
+
+
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
 
                         <Nav className="mr-auto">
                             <LinkContainer to='/cart'>
                                 <Nav.Link>Cart<ShoppingCartIcon/></Nav.Link>
                             </LinkContainer>
+
+
 
                             {userInfo ? (
                                 <NavDropdown title={userInfo.name} id='username'>
@@ -63,14 +80,12 @@ function Header(){
 
                                 </NavDropdown>
                             )}
-
-
-
-
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
+                 <SearchBox/>
             </Navbar>
+
         </header>
 
     )
