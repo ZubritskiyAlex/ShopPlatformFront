@@ -83,7 +83,7 @@ function Header(){
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
-                 <SearchBox/>
+
             </Navbar>
 
         </header>
