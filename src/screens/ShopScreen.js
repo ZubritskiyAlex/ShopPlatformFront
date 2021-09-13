@@ -7,6 +7,7 @@ import Loader from "../components/Loader";
 import Message from "../components/Message";
 
 
+
 function ShopScreen() {
     const dispatch = useDispatch()
     const shopList = useSelector(state => state.shopList)
@@ -21,6 +22,7 @@ function ShopScreen() {
     return(
         <div>
         <h1>Shops</h1>
+
             {loading ? <Loader/>
                     : error ? <Message variant='danger'>{error}</Message>
                            :(
@@ -33,6 +35,15 @@ function ShopScreen() {
                                 ))}
                             </Row>
                     )}
+
+            <Row>
+                {shops.map(shop => (
+                    <Col sm={12} md = {6} lg={4} xl ={3}>
+                        <h3>{shop.name}</h3>
+                        <Shop shop={shop}/>
+                    </Col>
+                ))}
+            </Row>
     </div>
     )
 }

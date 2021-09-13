@@ -214,7 +214,7 @@ function ProductScreen({ match, history }) {
                                     </Form.Group>
                                 </Form>
                             ) :(
-                                <Message variant='info'>Please <Link to = '/login'>login</Link>to write a review</Message>
+                                <Message variant='info'>Please <Link to = '/login'>login </Link>to write a review</Message>
                             )}
                         </ListGroup.Item>
                     </ListGroup>
