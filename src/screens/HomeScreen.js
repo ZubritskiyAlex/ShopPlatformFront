@@ -6,6 +6,7 @@ import {listProducts} from "../actions/productActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import ProductCarousel from "../components/ProductCarousel";
+import SearchBox from "../components/SearchBox";
 
 
 function HomeScreen({history}){
@@ -27,6 +28,7 @@ function HomeScreen({history}){
            {!keyword && <ProductCarousel/>}
 
            <h1>ALL Products</h1>
+           <SearchBox/>
 
            {loading ? <Loader/>
                     : error ? <Message variant='danger'>{error}</Message>
