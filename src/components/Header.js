@@ -5,7 +5,6 @@ import PersonIcon from '@material-ui/icons/Person';
 import {LinkContainer} from 'react-router-bootstrap'
 import {useDispatch, useSelector} from "react-redux";
 import {logout} from "../actions/userActions";
-import SearchBox from "./SearchBox";
 
 
 function Header(){
@@ -83,7 +82,7 @@ function Header(){
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
-                 <SearchBox/>
+
             </Navbar>
 
         </header>
