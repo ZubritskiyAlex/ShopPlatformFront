@@ -36,8 +36,4 @@ function Shop({shop}) {
     )
 }
 
-<<<<<<< HEAD
 export default Shop
-=======
-export default Shop
->>>>>>> 042bc3de2b55c8f67deef7c69da80036713480fa

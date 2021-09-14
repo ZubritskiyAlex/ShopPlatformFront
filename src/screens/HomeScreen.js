@@ -28,12 +28,12 @@ function HomeScreen({history}){
            {!keyword && <ProductCarousel/>}
 
            <h1>ALL Products</h1>
-<<<<<<< HEAD
-        <SearchBox/>
-=======
-           <SearchBox/>
 
->>>>>>> 042bc3de2b55c8f67deef7c69da80036713480fa
+        <SearchBox/>
+
+
+
+
            {loading ? <Loader/>
                     : error ? <Message variant='danger'>{error}</Message>
                            :

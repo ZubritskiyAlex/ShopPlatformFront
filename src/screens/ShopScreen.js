@@ -36,14 +36,7 @@ function ShopScreen() {
                             </Row>
                     )}
 
-            <Row>
-                {shops.map(shop => (
-                    <Col sm={12} md = {6} lg={4} xl ={3}>
-                        <h3>{shop.name}</h3>
-                        <Shop shop={shop}/>
-                    </Col>
-                ))}
-            </Row>
+
     </div>
     )
 }
